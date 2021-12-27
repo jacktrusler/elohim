@@ -5,7 +5,11 @@
 <main>
 	<h1>elohim</h1>
 	<p>Is it a portmanteau or the name of a music artist jack likes?</p>
-	<Player name="emerson" elo="1000"/>
+	<div class="players">
+		<Player imgSrc="../memerson.jpg" name="emerson" elo="1000"/>
+		<Player imgSrc="../memerson.jpg" name="emerson" elo="1000"/>
+		<Player imgSrc="../memerson.jpg" name="emerson" elo="1000"/>
+	</div>
 </main>
 
 <style>
@@ -14,6 +18,12 @@
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+	}
+
+	.players {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 
 	h1 {

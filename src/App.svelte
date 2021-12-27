@@ -1,10 +1,12 @@
 <script lang="ts">
 	export let name: string;
+	import Player from './Player.svelte';
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>elohim</h1>
+	<p>Is it a portmanteau or the name of a music artist jack likes?</p>
+	<Player name="emerson" elo="1000"/>
 </main>
 
 <style>

@@ -28,19 +28,49 @@
     }
 </script>
 
-<div>
+<div class="create-player">
     <p>Create a new player</p>
-    <div>Name</div> <input type="text" bind:value={name}/>
-    <div>Elo</div> <input type="text" bind:value={elo}/>
-    <div>image</div><img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
-    <button on:click={generateAvatar}>new avatar</button>
+    <div class="inputs">
+        <div>Name:</div><input type="text" bind:value={name}/>
+        <div>Elo:</div> <input class="elo" type="text" bind:value={elo}/>
+        <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
+        <button on:click={generateAvatar}>new avatar</button>
+    </div>
     <button disabled={!valid} on:click={savePlayer}>save player</button>
 </div>
 
 <style>
-    img {
+    .create-player {
+        /*display: flex;*/
         border: solid;
     }
+
+    img {
+        border: solid;
+        max-width: 50px;
+    }
+
+    .inputs {
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .inputs div {
+        padding-right: 5px;
+        padding-left: 10px;
+        /*padding-top: 5px;*/
+    }
+
+    .elo {
+        max-width: 80px;
+    }
+
+    .avatar-generator {
+        display: flex;
+        justify-content: center;
+    }
+
 
 </style>
 

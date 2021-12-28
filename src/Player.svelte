@@ -25,5 +25,6 @@
         max-width: 50px;
         text-align: left;
         align-self: start;
+        border: solid;
     }
 </style>

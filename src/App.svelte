@@ -3,10 +3,6 @@
 	import CreatePlayer from "./CreatePlayer.svelte";
 	import Teams from './Teams.svelte'
 	let playerList = [];
-	$: {
-		console.log(playerList);
-	}
-	
 </script>
 
 <main>
@@ -14,7 +10,7 @@
 	<p>Is it a portmanteau or the name of a music artist jack likes?</p>
 	<CreatePlayer bind:playerList={playerList}/>
 	<Players playerList={playerList}/>
-	<Teams />
+	<Teams bind:playerList={playerList}/>
 
 </main>
 

@@ -6,14 +6,15 @@
     export let playerList = [];
 
     let valid;
-
     let avatar = getRandomAvatar(5);
+
     function generateAvatar() {
         avatar = getRandomAvatar(5);
     }
 
     function savePlayer() {
         playerList = [...playerList, {
+            selected: false,
             name: name,
             elo: elo,
             avatar: avatar

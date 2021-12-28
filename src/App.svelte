@@ -1,11 +1,17 @@
 <script lang="ts">
-	import Player from './Player.svelte';
+	import Players from './Players.svelte';
+	import CreatePlayer from "./CreatePlayer.svelte";
+	let playerList = [];
+	$: {
+		console.log(playerList);
+	}
 </script>
 
 <main>
 	<h1>elohim</h1>
 	<p>Is it a portmanteau or the name of a music artist jack likes?</p>
-	<Player name="emerson" elo="1000"/>
+	<CreatePlayer bind:playerList={playerList}/>
+	<Players playerList={playerList}/>
 </main>
 
 <style>

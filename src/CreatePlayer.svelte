@@ -2,7 +2,7 @@
     import { getRandomAvatar } from "@fractalsoftware/random-avatar-generator";
 
     let name;
-    let elo;
+    let elo = '500';
     export let playerList = [];
 
     let valid;
@@ -12,20 +12,28 @@
         avatar = getRandomAvatar(5);
     }
 
+    let numCheck;
+
     function savePlayer() {
+        numCheck = /\D/.test(elo.trim()) //if not numbers return true
+        if (numCheck){
+            console.log('elo must only contain numbers')
+        } else {
         playerList = [...playerList, {
             selected: false,
             name: name,
-            elo: elo,
+            elo: elo.trim(),
             avatar: avatar
         }];
         name = "";
         elo = "";
         avatar = getRandomAvatar(5);
+        }
     }
 
     $: {
-        valid = name && !name.empty && elo && !elo.empty;
+        valid = name && !name.empty && !/\D/.test(elo) && !elo.empty;
+        console.log(/\D/.test(elo))
     }
 </script>
 
@@ -38,7 +46,10 @@
         <input type="text" bind:value={name}/>
 
         <div>Elo:</div>
-        <input class="elo" type="text" bind:value={elo}/>
+        <input 
+        class:elo-error={/\D/.test(elo)} 
+        class:elo={!/\D/.test(elo)}
+        type="text" bind:value={elo}/>
 
 
         <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
@@ -65,6 +76,11 @@
     }
 
     .elo {
+        max-width: 80px;
+    }
+
+    .elo-error{
+        color: red;
         max-width: 80px;
     }
 </style>

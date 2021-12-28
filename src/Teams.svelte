@@ -34,7 +34,7 @@
   }
 
   function balanceTeams(){
-    console.log('omg')
+    console.log(p)
   }
   
 </script>

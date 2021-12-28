@@ -1,17 +1,17 @@
 <script lang="ts">
 	import Players from './Players.svelte';
 	import CreatePlayer from "./CreatePlayer.svelte";
+	import Teams from './Teams.svelte'
 	let playerList = [];
 	$: {
 		console.log(playerList);
 	}
-	import Teams from './Teams.svelte'
+	
 </script>
 
 <main>
 	<h1>elohim</h1>
 	<p>Is it a portmanteau or the name of a music artist jack likes?</p>
-
 	<CreatePlayer bind:playerList={playerList}/>
 	<Players playerList={playerList}/>
 	<Teams />
@@ -20,7 +20,7 @@
 
 <style>
 	main {
-		display: flex;
+		flex-direction: column;
 		text-align: center;
 		padding: 1em;
 		max-width: 240px;

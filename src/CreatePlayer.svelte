@@ -5,7 +5,7 @@
     let elo;
     export let playerList = [];
 
-    let valid = false;
+    let valid;
 
     let avatar = getRandomAvatar(5);
     function generateAvatar() {
@@ -30,10 +30,16 @@
 
 <div class="create-player">
     <p>Create a new player</p>
+
     <div class="inputs">
-        <div>Name:</div><input type="text" bind:value={name}/>
-        <div>Elo:</div> <input class="elo" type="text" bind:value={elo}/>
+        <div>Name:</div>
+        <input type="text" bind:value={name}/>
+
+        <div>Elo:</div>
+        <input class="elo" type="text" bind:value={elo}/>
+
         <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
+
         <button on:click={generateAvatar}>new avatar</button>
     </div>
     <button disabled={!valid} on:click={savePlayer}>save player</button>
@@ -41,7 +47,6 @@
 
 <style>
     .create-player {
-        /*display: flex;*/
         border: solid;
     }
 
@@ -56,21 +61,8 @@
         align-items: center;
     }
 
-    .inputs div {
-        padding-right: 5px;
-        padding-left: 10px;
-        /*padding-top: 5px;*/
-    }
-
     .elo {
         max-width: 80px;
     }
-
-    .avatar-generator {
-        display: flex;
-        justify-content: center;
-    }
-
-
 </style>
 

@@ -1,19 +1,26 @@
 <script>
-    export let playerList = [];
     import Player from "./Player.svelte";
+    export let playerList = [];
 
 </script>
 
 <div class="players">
     {#each playerList as player}
-    <Player name={player.name} elo={player.elo} avatar={player.avatar}/>
-        {/each}
+        <div class="player">
+            <Player name={player.name} elo={player.elo} avatar={player.avatar}/>
+        </div>
+    {/each}
 </div>
 
 <style>
     .players {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .player {
+        width: 45%;
     }
 </style>

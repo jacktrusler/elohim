@@ -33,7 +33,6 @@
 
     $: {
         valid = name && !name.empty && !/\D/.test(elo) && !elo.empty;
-        console.log(/\D/.test(elo))
     }
 </script>
 

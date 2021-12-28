@@ -1,11 +1,13 @@
 <script>
+    export let playerList = [];
     import Player from "./Player.svelte";
+
 </script>
 
 <div class="players">
-    <Player imgSrc="../memerson.jpg" name="jack" elo="500"/>
-    <Player imgSrc="../memerson.jpg" name="emerson" elo="10000"/>
-    <Player imgSrc="../memerson.jpg" name="sven" elo="100"/>
+    {#each playerList as player}
+    <Player name={player.name} elo={player.elo} avatar={player.avatar}/>
+        {/each}
 </div>
 
 <style>

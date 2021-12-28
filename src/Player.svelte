@@ -1,11 +1,11 @@
 <script>
     export let name;
     export let elo;
-    export let imgSrc;
+    export let avatar;
 </script>
 
 <div class="player">
-    <img src={imgSrc} alt="noimage"/>
+    <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
     <p>{name}</p>
     <p>{elo}</p>
 </div>

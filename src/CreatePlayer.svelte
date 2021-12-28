@@ -6,14 +6,15 @@
     export let playerList = [];
 
     let valid;
-
     let avatar = getRandomAvatar(5);
+
     function generateAvatar() {
         avatar = getRandomAvatar(5);
     }
 
     function savePlayer() {
         playerList = [...playerList, {
+            selected: false,
             name: name,
             elo: elo,
             avatar: avatar
@@ -32,11 +33,13 @@
     <p>Create a new player</p>
 
     <div class="inputs">
+
         <div>Name:</div>
         <input type="text" bind:value={name}/>
 
         <div>Elo:</div>
         <input class="elo" type="text" bind:value={elo}/>
+
 
         <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
 

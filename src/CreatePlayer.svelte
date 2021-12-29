@@ -48,7 +48,7 @@
         <input 
         class:elo-error={/\D/.test(elo)} 
         class:elo={!/\D/.test(elo)}
-        type="text" bind:value={elo}/>
+        type="number" bind:value={elo}/>
 
 
         <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>

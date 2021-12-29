@@ -68,7 +68,7 @@
   }
 
   .team-2 {
-    border: solid peachpuff;
+    border: solid blue;
   }
 
   .teams-container{

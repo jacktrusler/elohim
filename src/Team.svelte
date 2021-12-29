@@ -10,7 +10,7 @@
 
     $: {
         totalElo = team.reduce((a, b) => a += b.elo, 0);
-        averageElo = totalElo / team.length;
+        averageElo = Math.floor(totalElo / team.length);
     }
 </script>
 

@@ -4,11 +4,19 @@
 
     export let team = [];
     const teamName = randomAdjNoun();
+
+    let totalElo = 0;
+    let averageElo = 0;
+
+    $: {
+        totalElo = team.reduce((a, b) => a += b.elo, 0);
+        averageElo = totalElo / team.length;
+    }
 </script>
 
 <div class='team-name'>
     <h4 class="team-heading">{teamName}</h4>
-    <p>Team Elo</p>
+    <p>{averageElo}, {totalElo}</p>
     <p>(average, total)</p>
 
     {#each team as {selected, name,elo,avatar}}
@@ -24,9 +32,12 @@
         color: #333333;
     }
 
+    .team-name p {
+        margin: 3px;
+    }
+
     .team-name {
-        color: green;
-        border: solid green;
-        width: 45%;
+        display: flex;
+        flex-direction: column;
     }
 </style>

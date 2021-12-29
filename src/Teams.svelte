@@ -32,7 +32,7 @@
   }
 
   function balanceTeams(){
-    console.log(p)
+    console.log("balance teams")
   }
   
 </script>
@@ -44,8 +44,12 @@
 </div>
 
 <div class="teams-container">
-  <Team bind:team={team1}/>
-  <Team bind:team={team2}/>
+  <div class="team team-1">
+    <Team bind:team={team1}/>
+  </div>
+  <div class="team team-2">
+    <Team bind:team={team2}/>
+  </div>
 </div>
 
 <style>
@@ -55,12 +59,24 @@
     justify-content: space-around;
   }
 
+  .team {
+    width: 50%;
+  }
+
+  .team-1 {
+    border: solid red;
+  }
+
+  .team-2 {
+    border: solid peachpuff;
+  }
+
   .teams-container{
-		display: flex;
-		border: solid red;
-		max-width: none;
+	display: flex;
+	border: solid peachpuff;
+	max-width: none;
     padding: 1em;
-		align-self: flex-end;
-		justify-content: space-around;
-	}
+	align-self: flex-end;
+	justify-content: space-around;
+  }
 </style>

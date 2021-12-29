@@ -31,15 +31,36 @@
     playerList = unselectedPlayers;
   }
 
-  function balanceTeams(){
-    console.log("balance teams")
+  function autoBalance(playerList, team1 = [], team2 = []){
+    console.log(playerList, team1, team2);
+    let allLads = playerList.concat(team1.concat(team2));
+    let sortedArr1 = []; 
+    let sortedArr2 = [];
+    let arr1sum = 0;
+    let arr2sum = 0;
+    allLads.sort((a,b) => b.elo - a.elo); //sort
+
+    for (let lad of allLads) {
+      if (sortedArr1.length===0){
+        sortedArr1.push(lad)
+        arr1sum += lad.elo;
+      } else if (arr2sum <= arr1sum){
+        sortedArr2.push(lad)
+        arr2sum += lad.elo; //lmao
+      } else {
+        sortedArr1.push(lad)
+        arr1sum += lad.elo
+      }
+    }
+
+    console.log(sortedArr1, sortedArr2)   
   }
   
 </script>
 
 <div class="button-container">
   <button class="team-button" on:click={addTeamOne}>Team One</button>
-  <button class="balance" on:click={balanceTeams}>Auto Balance</button>
+  <button class="balance" on:click={autoBalance}>Auto Balance</button>
   <button class="team-button" on:click={addTeamTwo}>Team Two</button>
 </div>
 

@@ -2,7 +2,7 @@
     import { getRandomAvatar } from "@fractalsoftware/random-avatar-generator";
 
     let name;
-    let elo = '500';
+    let elo = 500;
     export let playerList = [];
 
     let valid;
@@ -15,14 +15,14 @@
     let numCheck;
 
     function savePlayer() {
-        numCheck = /\D/.test(elo.trim()) //if not numbers return true
+        numCheck = /\D/.test(elo) //if not numbers return true
         if (numCheck){
             console.log('elo must only contain numbers')
         } else {
         playerList = [...playerList, {
             selected: false,
             name: name,
-            elo: elo.trim(),
+            elo: elo,
             avatar: avatar
         }];
         name = "";

@@ -1,12 +1,10 @@
 <script>
-  import randomAdjNoun from './randomAdjNoun.ts'
-  import Player from './Player.svelte'
+  import Team from './Team.svelte';
   export let playerList;
+
   let team1 = [];
   let team2 = [];
-  const team1name = randomAdjNoun();
-  const team2name = randomAdjNoun();
-  
+
   function addTeamOne(){
     const unselectedPlayers = [];
     for (let i = 0; i<playerList.length; i++ ){
@@ -34,7 +32,7 @@
   }
 
   function balanceTeams(){
-    console.log(p)
+    console.log("balance teams")
   }
   
 </script>
@@ -44,24 +42,13 @@
   <button class="balance" on:click={balanceTeams}>Auto Balance</button>
   <button class="team-button" on:click={addTeamTwo}>Team Two</button>
 </div>
-<div class="teams-container">
-  
-  <div class='team-name-1'>
-    <p >{team1name}</p>
-    {#each team1 as {selected, name,elo,avatar}}
-    <div class="player">
-      <Player {selected} {name} {elo} {avatar}/>
-    </div>
-    {/each}
-  </div>
 
-  <div class='team-name-2'>
-    <p>{team2name}</p>
-    {#each team2 as {selected, name,elo,avatar}}
-    <div class="player">
-      <Player {selected} {name} {elo} {avatar}/>
-    </div>
-    {/each}  
+<div class="teams-container">
+  <div class="team team-1">
+    <Team bind:team={team1}/>
+  </div>
+  <div class="team team-2">
+    <Team bind:team={team2}/>
   </div>
 </div>
 
@@ -71,24 +58,25 @@
     display:flex;
     justify-content: space-around;
   }
-  .team-name-1 {
-    color: green;
-    border: solid green;
-    width: 45%;
+
+  .team {
+    width: 50%;
   }
 
-  .team-name-2 {
-    color: magenta;
-    border: solid magenta;
-    width: 45%;
+  .team-1 {
+    border: solid red;
+  }
+
+  .team-2 {
+    border: solid blue;
   }
 
   .teams-container{
-		display: flex;
-		border: solid red;
-		max-width: none;
+	display: flex;
+	border: solid peachpuff;
+	max-width: none;
     padding: 1em;
-		align-self: flex-end;
-		justify-content: space-around;
-	}
+	align-self: flex-end;
+	justify-content: space-around;
+  }
 </style>

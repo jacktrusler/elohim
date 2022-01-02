@@ -1,9 +1,22 @@
 <script>
   import Team from './Team.svelte';
   export let playerList;
+  import elohim from './elohim';
 
   let team1 = [];
   let team2 = [];
+  let newPlayerList = [];
+  function auto() {
+    if (team1.length > 0 || team2.length > 0){
+      newPlayerList = [...playerList,...team1,...team2];
+      [team1, team2] = elohim(newPlayerList);
+      playerList = [];
+    } else {
+      [team1, team2] = elohim(playerList);
+      playerList = [];
+      console.log(team1,team2); 
+    }
+  }
 
   function addTeamOne(){
     const unselectedPlayers = [];
@@ -31,16 +44,36 @@
     playerList = unselectedPlayers;
   }
 
-  function autoBalance(playerList, team1 = [], team2 = []){
-    console.log(playerList, team1, team2);
+  function autoBalanceEvenTeams(){
+    let allLads = playerList.concat(team1.concat(team2));
+    let permutedValues = [];
+    let arr1sum = 0;
+    let arr2sum = 0;
+
+    function permute(arr, m=[]){
+      if (arr.length === 0) {
+        permutedValues.push(m)
+      } else {
+        for (let i = 0; i < arr.length; i++) {
+        let curr = arr.slice();
+        let next = curr.splice(i, 1);
+        permute(curr.slice(), m.concat(next))
+        }
+      }
+    }
+ 
+  permute(allLads);
+}
+
+  function autoBalanceUnevenTeams(){
     let allLads = playerList.concat(team1.concat(team2));
     let sortedArr1 = []; 
     let sortedArr2 = [];
     let arr1sum = 0;
     let arr2sum = 0;
-    allLads.sort((a,b) => b.elo - a.elo); //sort
+    allLads.sort((a,b) => b.elo - a.elo); //sort decending
 
-    for (let lad of allLads) {
+     for (let lad of allLads) {
       if (sortedArr1.length===0){
         sortedArr1.push(lad)
         arr1sum += lad.elo;
@@ -52,15 +85,13 @@
         arr1sum += lad.elo
       }
     }
-
-    console.log(sortedArr1, sortedArr2)   
   }
   
 </script>
 
 <div class="button-container">
   <button class="team-button" on:click={addTeamOne}>Team One</button>
-  <button class="balance" on:click={autoBalance}>Auto Balance</button>
+  <button class="balance" on:click={auto}>Auto Balance</button>
   <button class="team-button" on:click={addTeamTwo}>Team Two</button>
 </div>
 

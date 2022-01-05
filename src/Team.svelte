@@ -19,14 +19,14 @@
         {teamName}
     </div>
     <div class='elo'>
-        {totalElo ? `Total Elo: ${totalElo}` : "Total Elo: 0"}
+        {totalElo ? `Total: ${totalElo}` : "Total: 0"}
     </div>
 </div>
     
 <div>
     {#each team as {selected, name,elo,avatar}}
         <div class="player">
-            <Player {selected} {name} {elo} {avatar}/>
+            <Player bind:selected = {selected} {name} {elo} {avatar}/>
         </div>
     {/each}
 

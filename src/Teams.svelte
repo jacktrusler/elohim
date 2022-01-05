@@ -69,24 +69,24 @@
   }
 
   .team {
-    width: 50%;
+    width: 45%;
   }
 
   #team-1 {
     color: rgb(163, 22, 22);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .team-2 {
     color: rgb(14, 14, 121);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .teams-container{
 	display: flex;
 	border: solid peachpuff;
 	max-width: none;
-    padding: 1em;
+  padding: 1em;
 	align-self: flex-end;
 	justify-content: space-around;
   }

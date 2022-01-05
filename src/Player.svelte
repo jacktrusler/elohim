@@ -3,36 +3,58 @@
     export let elo;
     export let avatar;
     export let selected;
-
 </script>
 
-<div class="player">
-    <input type = "checkbox" bind:checked = {selected}/>
-    <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
-    <p>{name}</p>
+<div class="player" on:click={()=> {selected = !selected}}
+    id="{selected ? 'selected' : ''}">
+    <div class='img-box'>
+        <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
+    </div>
+    <div class='text-box'>
+        <div>{name}</div>
+        <div>{elo}</div>
+    </div>
 </div>
-<div>Elo: {elo}</div>
 
 <style>
-    .player:hover{
-        color: purple;
+    #selected{
+        color: green;
     }
 
     .player {
+        height: 80px;
         border-style: solid;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    .player p {
-        text-align: left;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    .player img {
-        max-height: 50px;
-        max-width: 50px;
-        text-align: left;
-        align-self: center;
+    .img-box{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+    }
+
+    .text-box{
+        display: flex;
+        flex-wrap: wrap;
+        width: 60%;
+        justify-content: space-evenly;
+    }
+
+    .text-box div{
+        border: solid;
+        height: 25px;
+        overflow:hidden;
+    }
+
+    .img-box img {
+        max-height: 80px;
+        max-width: 80px;
+        min-height: 55px;
+        min-width: 55px;
         border: solid;
     }
 </style>

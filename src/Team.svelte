@@ -15,9 +15,15 @@
 </script>
 
 <div class='team-name'>
-    <p class="team-heading">{teamName}</p>
-    <p class='elo'>{totalElo ? `Total Elo: ${totalElo}` : "Total Elo: 0"}</p>
-    <p></p>
+    <div class="team-heading"> 
+        {teamName}
+    </div>
+    <div class='elo'>
+        {totalElo ? `Total Elo: ${totalElo}` : "Total Elo: 0"}
+    </div>
+</div>
+    
+<div>
     {#each team as {selected, name,elo,avatar}}
         <div class="player">
             <Player {selected} {name} {elo} {avatar}/>
@@ -28,16 +34,20 @@
 
 <style>
     .team-heading{
+        min-height: 80px;
         font-size: 2rem;
     }
 
     .elo{
-        color: black;
-        margin: 3px;
+        min-height: 60px;
+        font-size: 1.3rem;
+        overflow: hidden;
         text-decoration: underline;
     }
 
     .team-name {
+        max-height: 160px;
+        min-height: 160px;
         display: flex;
         flex-direction: column;
     }

@@ -14,33 +14,23 @@
     } else {
       [team1, team2] = elohim(playerList);
       playerList = [];
-      console.log(team1,team2); 
+      console.log(team1,team2);
     }
   }
 
   function randomize() {
-    let array = [];
-    if (playerList.length !== 0) {
-      array = playerList;
-    } else {
-      array = team1.concat(team2);
-      team1 = [];
-      team2 = [];
-    }
-      for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-      }
-      if (team1.length < team2.length) {
-        team1 = [...team1, ...array.slice(array.length/2)];
-        team2 = [...team2, ...array.slice(0, array.length/2)];
-      } else {
-        team1 = [...team1, ...array.slice(0, array.length/2)];
-        team2 = [...team2, ...array.slice(array.length/2)];
-      }
+    let array = playerList.concat(team1).concat(team2);
     playerList = [];
+    team1 = [];
+    team2 = [];
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    team1 = [...team1, ...array.slice(0, array.length/2)];
+    team2 = [...team2, ...array.slice(array.length/2)];
   }
 
   function addTeamOne(){
@@ -68,7 +58,7 @@
     }
     playerList = unselectedPlayers;
   }
-  
+
 </script>
 
 <div class="button-container">

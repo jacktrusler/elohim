@@ -43,49 +43,6 @@
     }
     playerList = unselectedPlayers;
   }
-
-  function autoBalanceEvenTeams(){
-    let allLads = playerList.concat(team1.concat(team2));
-    let permutedValues = [];
-    let arr1sum = 0;
-    let arr2sum = 0;
-
-    function permute(arr, m=[]){
-      if (arr.length === 0) {
-        permutedValues.push(m)
-      } else {
-        for (let i = 0; i < arr.length; i++) {
-        let curr = arr.slice();
-        let next = curr.splice(i, 1);
-        permute(curr.slice(), m.concat(next))
-        }
-      }
-    }
- 
-  permute(allLads);
-}
-
-  function autoBalanceUnevenTeams(){
-    let allLads = playerList.concat(team1.concat(team2));
-    let sortedArr1 = []; 
-    let sortedArr2 = [];
-    let arr1sum = 0;
-    let arr2sum = 0;
-    allLads.sort((a,b) => b.elo - a.elo); //sort decending
-
-     for (let lad of allLads) {
-      if (sortedArr1.length===0){
-        sortedArr1.push(lad)
-        arr1sum += lad.elo;
-      } else if (arr2sum <= arr1sum){
-        sortedArr2.push(lad)
-        arr2sum += lad.elo; //lmao
-      } else {
-        sortedArr1.push(lad)
-        arr1sum += lad.elo
-      }
-    }
-  }
   
 </script>
 
@@ -96,7 +53,7 @@
 </div>
 
 <div class="teams-container">
-  <div class="team team-1">
+  <div class="team team-1" id="team-1">
     <Team bind:team={team1}/>
   </div>
   <div class="team team-2">
@@ -112,22 +69,24 @@
   }
 
   .team {
-    width: 50%;
+    width: 45%;
   }
 
-  .team-1 {
-    border: solid red;
+  #team-1 {
+    color: rgb(163, 22, 22);
+    font-size: 1.3rem;
   }
 
   .team-2 {
-    border: solid blue;
+    color: rgb(14, 14, 121);
+    font-size: 1.3rem;
   }
 
   .teams-container{
 	display: flex;
 	border: solid peachpuff;
 	max-width: none;
-    padding: 1em;
+  padding: 1em;
 	align-self: flex-end;
 	justify-content: space-around;
   }

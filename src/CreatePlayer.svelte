@@ -18,6 +18,7 @@
         numCheck = /\D/.test(elo) //if not numbers return true
         if (numCheck){
             console.log('elo must only contain numbers')
+            
         } else {
         playerList = [...playerList, {
             selected: false,
@@ -25,6 +26,7 @@
             elo: elo,
             avatar: avatar
         }];
+        console.log(typeof(elo))
         name = "";
         elo = "";
         avatar = getRandomAvatar(5);
@@ -37,50 +39,83 @@
 </script>
 
 <div class="create-player">
-    <p>Create a new player</p>
-
-    <div class="inputs">
-
-        <div>Name:</div>
-        <input type="text" bind:value={name}/>
-
-        <div>Elo:</div>
+    <div class='name-elo'>
+        <input placeholder="Enter Name" id='input-field' type="text" bind:value={name}/>
+    
         <input 
+        placeholder="Enter Elo"
+        id='input-field'
         class:elo-error={/\D/.test(elo)} 
         class:elo={!/\D/.test(elo)}
         type="number" bind:value={elo}/>
+    </div>    
 
-
-        <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
-
-        <button on:click={generateAvatar}>new avatar</button>
+    <div class='avatar-container'>
+        <div>
+            <button on:click={generateAvatar}>new avatar</button>
+        </div>
+        <div class='img-box' on:click={generateAvatar}>
+            <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
+        </div>
     </div>
-    <button disabled={!valid} on:click={savePlayer}>save player</button>
+    <div class='save-player'> 
+        <button disabled={!valid} on:click={savePlayer}>save player</button>
+    </div>
 </div>
 
 <style>
     .create-player {
+        display: flex;
         border: solid;
+        height: 150px;
+        justify-content: center;
+    }
+
+    .name-elo{
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-around;
+        height: 100%; 
+        width: 40%;
+        border: solid black
+    }
+
+    #input-field{
+        align-self: center;
+        width: 140px;
+    }
+
+    .avatar-container{
+        display: flex;
+        flex-flow: column wrap;
+        height: 100%;
+        width: 40%;
+        border: solid black
+    }
+
+    .save-player{
+        display: flex;
+        align-items: center;
+        border: solid black;
+        width: 20%;
+        height: 100%;
+    }
+
+    .img-box{
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border: solid green;
     }
 
     img {
-        border: solid;
-        max-width: 50px;
-    }
-
-    .inputs {
-        display:flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .elo {
         max-width: 80px;
     }
 
     .elo-error{
         color: red;
-        max-width: 80px;
     }
 </style>
 

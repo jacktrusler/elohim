@@ -18,6 +18,7 @@
         numCheck = /\D/.test(elo) //if not numbers return true
         if (numCheck){
             console.log('elo must only contain numbers')
+            
         } else {
         playerList = [...playerList, {
             selected: false,
@@ -25,6 +26,7 @@
             elo: elo,
             avatar: avatar
         }];
+        console.log(typeof(elo))
         name = "";
         elo = "";
         avatar = getRandomAvatar(5);
@@ -37,50 +39,64 @@
 </script>
 
 <div class="create-player">
-    <p>Create a new player</p>
-
-    <div class="inputs">
-
-        <div>Name:</div>
-        <input type="text" bind:value={name}/>
-
-        <div>Elo:</div>
+    <div class='name-elo'>
+        <input placeholder="Enter Name" id='input-field' type="text" bind:value={name}/>
+    
         <input 
+        placeholder="Enter Elo"
+        id='input-field'
         class:elo-error={/\D/.test(elo)} 
         class:elo={!/\D/.test(elo)}
         type="number" bind:value={elo}/>
+    </div>    
 
-
-        <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
-
-        <button on:click={generateAvatar}>new avatar</button>
+    <div class='avatar-container'>
+        <div>
+            <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
+        </div>
+        <div>
+            <button on:click={generateAvatar}>new avatar</button>
+        </div>
     </div>
+</div>
+
+<div class='save-player'> 
     <button disabled={!valid} on:click={savePlayer}>save player</button>
 </div>
 
 <style>
     .create-player {
+        display: flex;
         border: solid;
+        height: 18vh;
+    }
+
+    .name-elo{
+        padding-top: 10px;
+        height: 100%; 
+        width: 50%;
+    }
+
+    #input-field{
+        align-self: center;
+        width: 50%;
+    }
+
+    .save-player{
+        padding-top: 20px;
+    }
+    .avatar-container{
+        padding-top: 10px;
+        height: 100%;
+        width: 50%;
     }
 
     img {
-        border: solid;
         max-width: 50px;
-    }
-
-    .inputs {
-        display:flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .elo {
-        max-width: 80px;
     }
 
     .elo-error{
         color: red;
-        max-width: 80px;
     }
 </style>
 

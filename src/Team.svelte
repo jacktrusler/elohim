@@ -15,10 +15,9 @@
 </script>
 
 <div class='team-name'>
-    <h4 class="team-heading">{teamName}</h4>
-    <p>{averageElo}, {totalElo}</p>
-    <p>(average, total)</p>
-
+    <p class="team-heading">{teamName}</p>
+    <p class='elo'>{totalElo ? `Total Elo: ${totalElo}` : "Total Elo: 0"}</p>
+    <p></p>
     {#each team as {selected, name,elo,avatar}}
         <div class="player">
             <Player {selected} {name} {elo} {avatar}/>
@@ -28,12 +27,14 @@
 </div>
 
 <style>
-    .team-heading {
-        color: #333333;
+    .team-heading{
+        font-size: 2rem;
     }
 
-    .team-name p {
+    .elo{
+        color: black;
         margin: 3px;
+        text-decoration: underline;
     }
 
     .team-name {

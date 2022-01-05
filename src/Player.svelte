@@ -10,8 +10,8 @@
     <input type = "checkbox" bind:checked = {selected}/>
     <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
     <p>{name}</p>
-    <p>{elo}</p>
 </div>
+<div>Elo: {elo}</div>
 
 <style>
     .player:hover{
@@ -21,6 +21,7 @@
     .player {
         border-style: solid;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
     }
     .player p {
@@ -31,7 +32,7 @@
         max-height: 50px;
         max-width: 50px;
         text-align: left;
-        align-self: start;
+        align-self: center;
         border: solid;
     }
 </style>

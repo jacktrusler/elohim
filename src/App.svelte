@@ -7,7 +7,7 @@
 
 <main>
 	<h1>elohim</h1>
-	<p>Is it a portmanteau or the name of a music artist jack likes?</p>
+	<p>Create a New Player</p>
 	<CreatePlayer bind:playerList={playerList}/>
 	<Players playerList={playerList}/>
 	<Teams bind:playerList={playerList}/>
@@ -19,7 +19,7 @@
 		flex-direction: column;
 		text-align: center;
 		padding: 1em;
-		max-width: 240px;
+		max-width: 360px;
 		margin: 0 auto;
 	}
 

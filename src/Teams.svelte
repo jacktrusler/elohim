@@ -28,6 +28,19 @@
         unselectedPlayers.push(playerList[i]);
       }
     }
+    team2.forEach(obj => {
+      if (obj.selected) {
+        team1.push(obj)
+      }
+    })
+    team2 = team2.filter(obj => !obj.selected)
+    team1 = team1.map(obj => {
+      if (obj.selected) {
+        obj.selected = false
+      }
+      return obj;
+    });
+
     playerList = unselectedPlayers;
   }
 
@@ -41,6 +54,19 @@
         unselectedPlayers.push(playerList[i]);
       }
     }
+    team1.forEach(obj => {
+      if (obj.selected) {
+        team2.push(obj)
+      }
+    })
+    team1 = team1.filter(obj => !obj.selected)
+    team2 = team2.map(obj => {
+      if (obj.selected) {
+        obj.selected = false
+      }
+      return obj;
+    });
+
     playerList = unselectedPlayers;
   }
   

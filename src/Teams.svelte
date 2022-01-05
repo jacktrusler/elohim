@@ -18,6 +18,31 @@
     }
   }
 
+  function randomize() {
+    let array = [];
+    if (playerList.length !== 0) {
+      array = playerList;
+    } else {
+      array = team1.concat(team2);
+      team1 = [];
+      team2 = [];
+    }
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      if (team1.length < team2.length) {
+        team1 = [...team1, ...array.slice(array.length/2)];
+        team2 = [...team2, ...array.slice(0, array.length/2)];
+      } else {
+        team1 = [...team1, ...array.slice(0, array.length/2)];
+        team2 = [...team2, ...array.slice(array.length/2)];
+      }
+    playerList = [];
+  }
+
   function addTeamOne(){
     const unselectedPlayers = [];
     for (let i = 0; i<playerList.length; i++ ){
@@ -49,6 +74,7 @@
 <div class="button-container">
   <button class="team-button" on:click={addTeamOne}>Team One</button>
   <button class="balance" on:click={auto}>Auto Balance</button>
+  <button class="randomize" on:click={randomize}>Randomize</button>
   <button class="team-button" on:click={addTeamTwo}>Team Two</button>
 </div>
 

@@ -39,45 +39,58 @@
 </script>
 
 <div class="create-player">
-    <div class='name-elo'>
-        <input placeholder="Enter Name" id='input-field' type="text" bind:value={name}/>
-    
-        <input 
-        placeholder="Enter Elo"
-        id='input-field'
-        class:elo-error={/\D/.test(elo)} 
-        class:elo={!/\D/.test(elo)}
-        type="number" bind:value={elo}/>
-    </div>    
+    <div class="player-container">
+        <div class='avatar-container'>
 
-    <div class='avatar-container'>
-        <div>
-            <button on:click={generateAvatar}>new avatar</button>
-        </div>
-        <div class='img-box' on:click={generateAvatar}>
-            <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
+            <div class='img-box' on:click={generateAvatar}>
+                <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
+            </div>
+
+            <div class='name-elo'>
+                <input placeholder="Enter Name" id='input-field' type="text" bind:value={name}/>
+            
+                <input 
+                placeholder="Enter Elo"
+                id='input-field'
+                class:elo-error={/\D/.test(elo)} 
+                class:elo={!/\D/.test(elo)}
+                type="number" bind:value={elo}/>
+            </div>    
+            <div class='save-player'> 
+                <button disabled={!valid} on:click={savePlayer}>save player</button>
+            </div>
         </div>
     </div>
-    <div class='save-player'> 
-        <button disabled={!valid} on:click={savePlayer}>save player</button>
-    </div>
+
 </div>
 
 <style>
     .create-player {
         display: flex;
-        border: solid;
-        height: 150px;
+        height: 140px;
         justify-content: center;
+    }
+
+    .player-container{
+        display: flex;
+        justify-content: flex-start;
+        height: 100px;
+        width: 360px;
+        border: solid;
+    }
+
+    .avatar-container{
+        display: flex;
+        height: 100px;
+        min-width: 100px;
     }
 
     .name-elo{
         display: flex;
-        flex-flow: wrap;
-        justify-content: space-around;
-        height: 100%; 
-        width: 40%;
-        border: solid black
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 100px; 
+        width: 160px;
     }
 
     #input-field{
@@ -85,33 +98,18 @@
         width: 140px;
     }
 
-    .avatar-container{
-        display: flex;
-        flex-flow: column wrap;
-        height: 100%;
-        width: 40%;
-        border: solid black
-    }
-
     .save-player{
         display: flex;
         align-items: center;
         border: solid black;
-        width: 20%;
-        height: 100%;
+        height: 100px;
     }
 
     .img-box{
         display: flex;
-        align-self: center;
         justify-content: center;
         width: 100px;
         height: 100px;
-        border: solid green;
-    }
-
-    img {
-        max-width: 80px;
     }
 
     .elo-error{

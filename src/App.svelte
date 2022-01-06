@@ -20,7 +20,7 @@
 	}
 
 	:global(body) {
-		background-color: #212121;
+		background-color: #35363a;
 		transition: background-color 0.3s
 	}
 </style>

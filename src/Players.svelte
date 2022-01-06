@@ -21,11 +21,12 @@
     .players {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: wrap;
+        border: solid;
     }
 
     .player {
-        width: 45%;
+        width: 160px;
     }
 </style>

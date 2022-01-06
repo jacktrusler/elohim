@@ -115,12 +115,12 @@
   }
 
   #team-1 {
-    color: rgb(163, 22, 22);
+    color: #6D9886;
     font-size: 1.3rem;
   }
 
   .team-2 {
-    color: rgb(14, 14, 121);
+    color: #DB6B97;
     font-size: 1.3rem;
   }
 

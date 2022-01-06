@@ -18,16 +18,17 @@
 
 <style>
     #selected{
-        color: green;
+        background: #808080;
     }
 
     .player {
         height: 80px;
-        border-style: solid;
+        border: solid lightgray;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
+        color: white;
     }
 
     .img-box{
@@ -45,7 +46,6 @@
     }
 
     .text-box div{
-        border: solid;
         height: 25px;
         overflow:hidden;
     }
@@ -55,6 +55,6 @@
         max-width: 80px;
         min-height: 55px;
         min-width: 55px;
-        border: solid;
+        background: #212121;
     }
 </style>

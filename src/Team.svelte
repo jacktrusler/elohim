@@ -34,13 +34,13 @@
 
 <style>
     .team-heading{
-        min-height: 80px;
-        font-size: 2rem;
+        font-size: 1.5rem;
+        padding-bottom: 0.5em;
     }
 
     .elo{
         min-height: 60px;
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         overflow: hidden;
         text-decoration: underline;
     }
@@ -50,5 +50,16 @@
         min-height: 160px;
         display: flex;
         flex-direction: column;
+    }
+
+    @media (max-width: 640px) {
+        .team-heading {
+            font-size: 1.2rem;
+        }
+
+        .elo {
+            font-size: 1rem;
+        }
+
     }
 </style>

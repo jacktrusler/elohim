@@ -1,18 +1,19 @@
 <script>
     import { getRandomAvatar } from "@fractalsoftware/random-avatar-generator";
+    const AVATAR_COMPLEXITY = 3;
 
-    let name;
-    let elo = 500;
     export let playerList = [];
 
+    let numCheck;
+
+    let name;
     let valid;
-    let avatar = getRandomAvatar(5);
+    let elo = 500;
+    let avatar = getRandomAvatar(AVATAR_COMPLEXITY);
 
     function generateAvatar() {
-        avatar = getRandomAvatar(5);
+        avatar = getRandomAvatar(AVATAR_COMPLEXITY);
     }
-
-    let numCheck;
 
     function savePlayer() {
         numCheck = /\D/.test(elo) //if not numbers return true
@@ -29,7 +30,7 @@
         console.log(typeof(elo))
         name = "";
         elo = "";
-        avatar = getRandomAvatar(5);
+        avatar = getRandomAvatar(AVATAR_COMPLEXITY);
         }
     }
 
@@ -91,6 +92,7 @@
         flex-wrap: wrap;
         height: 100px; 
         width: 160px;
+        border: solid peachpuff;
     }
 
     #input-field{
@@ -110,10 +112,10 @@
         justify-content: center;
         width: 100px;
         height: 100px;
+        border: solid darkseagreen;
     }
 
     .elo-error{
         color: red;
     }
 </style>
-

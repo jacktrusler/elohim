@@ -88,8 +88,8 @@
 
 <div class="button-container">
   <button class="team-button" on:click={addTeamOne}>Team One</button>
+  <input id = "arrow" type="image" src="arrow15.png" alt='shuffle' on:click={randomize}/>
   <button class="balance" on:click={auto}>Auto Balance</button>
-  <button class="randomize" on:click={randomize}>Randomize</button>
   <button class="team-button" on:click={addTeamTwo}>Team Two</button>
 </div>
 
@@ -109,6 +109,11 @@
     justify-content: space-around;
   }
 
+  #arrow{
+   display:flex;
+   border:none;
+   height: 50px;
+  }
   .team {
     width: 45%;
   }

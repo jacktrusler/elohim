@@ -88,8 +88,8 @@
 
 <div class="button-container">
   <button class="team-button" on:click={addTeamOne}>Team One</button>
-  <input id = "arrow" type="image" src="arrow15.png" alt='shuffle' on:click={randomize}/>
-  <button class="balance" on:click={auto}>Auto Balance</button>
+  <input id = "arrow" type="image" src="Randomize.png" alt='randomize' on:click={randomize}/>
+  <input id = "arrow" type="image" src="AutoBalance.png" alt='auto-balance' on:click={auto}/>
   <button class="team-button" on:click={addTeamTwo}>Team Two</button>
 </div>
 

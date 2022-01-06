@@ -1,8 +1,8 @@
 <script>
     import { getRandomAvatar } from "@fractalsoftware/random-avatar-generator";
-    const AVATAR_COMPLEXITY = 3;
+    import { playerList } from './stores.ts';
 
-    export let playerList = [];
+    const AVATAR_COMPLEXITY = 3;
 
     let numCheck;
 
@@ -19,18 +19,21 @@
         numCheck = /\D/.test(elo) //if not numbers return true
         if (numCheck){
             console.log('elo must only contain numbers')
-            
         } else {
-        playerList = [...playerList, {
-            selected: false,
-            name: name,
-            elo: elo,
-            avatar: avatar
-        }];
-        console.log(typeof(elo))
-        name = "";
-        elo = "";
-        avatar = getRandomAvatar(AVATAR_COMPLEXITY);
+            playerList.update(players => {
+                return [
+                    ...players,
+                    {
+                        selected: false,
+                        name: name,
+                        elo: elo,
+                        avatar: avatar
+                    }
+                ]
+            });
+            name = "";
+            elo = "";
+            avatar = getRandomAvatar(AVATAR_COMPLEXITY);
         }
     }
 

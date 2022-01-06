@@ -1,14 +1,22 @@
 <script lang="ts">
+	import { team1, team2, playerList } from "./stores";
+
 	import Players from './Players.svelte';
 	import CreatePlayer from "./CreatePlayer.svelte";
 	import Teams from './Teams.svelte'
-	let playerList = [];
+
+	function clear() {
+		$playerList = [];
+		team1.update(() => [] );
+		team2.update(() => [] );
+	}
 </script>
 
 <main>
-	<CreatePlayer bind:playerList={playerList}/>
-	<Players playerList={playerList}/>
-	<Teams bind:playerList={playerList}/>
+	<CreatePlayer />
+	<Players />
+	<Teams />
+	<button on:click={clear}>clear</button>
 </main>
 
 <style>
@@ -21,6 +29,5 @@
 
 	:global(body) {
 		background-color: #35363a;
-		transition: background-color 0.3s
 	}
 </style>

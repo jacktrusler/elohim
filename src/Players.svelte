@@ -1,11 +1,10 @@
 <script>
     import Player from "./Player.svelte";
-    //{name: 'puds', elo: 500, avatar: something, selected: false}
-    export let playerList = [];
+    import { playerList } from "./stores";
 </script>
 
 <div class="players">
-    {#each playerList as player}
+    {#each $playerList as player}
         <div class="player">
             <Player 
                 bind:selected={player.selected} 

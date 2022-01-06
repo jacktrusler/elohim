@@ -15,14 +15,12 @@
 	main {
 		flex-direction: column;
 		text-align: center;
-		padding: 1em;
+		padding: 0.5em;
 		margin: 0 auto;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+	:global(body) {
+		background-color: #212121;
+		transition: background-color 0.3s
 	}
 </style>

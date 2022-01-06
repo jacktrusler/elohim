@@ -23,11 +23,12 @@
 
     .player {
         height: 80px;
-        border-style: solid;
+        border: solid peachpuff;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
+        color: peachpuff;
     }
 
     .img-box{

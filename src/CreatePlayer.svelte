@@ -92,6 +92,7 @@
         flex-wrap: wrap;
         height: 100px; 
         width: 160px;
+        border: solid peachpuff;
     }
 
     #input-field{
@@ -111,6 +112,7 @@
         justify-content: center;
         width: 100px;
         height: 100px;
+        border: solid darkseagreen;
     }
 
     .elo-error{

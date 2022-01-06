@@ -6,12 +6,9 @@
 </script>
 
 <main>
-	<h1>elohim</h1>
-	<p>Create a New Player</p>
 	<CreatePlayer bind:playerList={playerList}/>
 	<Players playerList={playerList}/>
 	<Teams bind:playerList={playerList}/>
-
 </main>
 
 <style>
@@ -19,7 +16,6 @@
 		flex-direction: column;
 		text-align: center;
 		padding: 1em;
-		max-width: 360px;
 		margin: 0 auto;
 	}
 
@@ -28,11 +24,5 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
 	}
 </style>

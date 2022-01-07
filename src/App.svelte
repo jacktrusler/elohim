@@ -16,7 +16,7 @@
 	<div class='gradient'>
 		<div class='castle'>
 			<div class='title'>
-				ELOHIM
+				Elohim
 			</div>
 		</div>
 		
@@ -34,28 +34,30 @@
 		height: 100vh;
 	}
 	.castle {
-		margin-bottom: 50px;
 		display: flex;
-		flex-grow: 1;
-		height: 30vh;
+		align-items: stretch;
+		height: 250px;
 		width: 100%;
 		background:
-			linear-gradient(darkblue 50%, rgb(16, 13, 17) 100%),
-			url('/castle-on-hill-flipped-cropped.png');
+			no-repeat url('/castle-on-hill-flipped-cropped.png'),
+			linear-gradient(darkblue 50%, rgb(16, 13, 17) 100%);
 		background-color: #35363a;
-		background-blend-mode:difference;
+		background-size:cover;
 		justify-content: center;
-}
+		border-bottom: 25px solid black;
+		overflow: hidden;
+	}
 
 	.title{
 		display: flex;
 		align-items: flex-end;
-		font-size: 4rem;
-		font: bold;
+		font-size: 7rem;
+		font-family: cursive; 
 		width: 100%;
-		color: white;
+		text-shadow: gold 3px 0 20px;
+		color: white ;
+		-webkit-text-stroke: 2.5px black;
 	}
-
 	main {
 		flex-direction: column;
 		text-align: center;

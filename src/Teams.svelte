@@ -1,6 +1,6 @@
 <script>
   import Team from './Team.svelte';
-  import { team1, team2, playerList } from './stores.ts';
+  import {team1, team2, playerList} from './stores.ts';
   import elohim from './elohim';
 
   let newPlayerList = [];
@@ -87,10 +87,10 @@
 </script>
 
 <div class="button-container">
-  <button class="team-button" on:click={addTeamOne}>Team One</button>
-  <input id = "arrow" type="image" src="Randomize.png" alt='randomize' on:click={randomize}/>
-  <input id = "arrow" type="image" src="AutoBalance.png" alt='auto-balance' on:click={auto}/>
-  <button class="team-button" on:click={addTeamTwo}>Team Two</button>
+  <input class = "arrow" type="image" src="Team1.png" alt='randomize' on:click={addTeamOne}/>
+  <input class = "arrow" type="image" src="Randomize.png" alt='randomize' on:click={randomize}/>
+  <input id='scale' type="image" src="Balance.png" alt='auto-balance' on:click={auto}/>
+  <input class = "arrow" type="image" src="Team2.png" alt='randomize' on:click={addTeamTwo}/>
 </div>
 
 <div class="teams-container">
@@ -109,28 +109,36 @@
     justify-content: space-around;
   }
 
-  #arrow{
+  #scale{
+    display: flex;
+    border: none;
+    height: 70px;
+    margin-bottom: 15px;
+  }
+
+  .arrow{
    display:flex;
    border:none;
    height: 50px;
+   margin-top: 20px;
   }
   .team {
     width: 45%;
   }
 
   #team-1 {
-    color: #6D9886;
+    color: skyblue;
     font-size: 1.3rem;
   }
 
   .team-2 {
-    color: #DB6B97;
+    color: pink;
     font-size: 1.3rem;
   }
 
   .teams-container{
 	display: flex;
-	border: solid peachpuff;
+	border-top: solid white;
 	max-width: none;
   padding: 1em;
 	align-self: flex-end;

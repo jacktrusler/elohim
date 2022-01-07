@@ -3,12 +3,12 @@
     import { playerList } from './stores.ts';
 
     const AVATAR_COMPLEXITY = 3;
-
+    let rules = false;
     let numCheck;
 
     let name;
     let valid;
-    let elo = 500;
+    let elo = null;
     let avatar = getRandomAvatar(AVATAR_COMPLEXITY);
 
     function generateAvatar() {
@@ -32,7 +32,7 @@
                 ]
             });
             name = "";
-            elo = "";
+            elo = null;
             avatar = getRandomAvatar(AVATAR_COMPLEXITY);
         }
     }
@@ -42,8 +42,25 @@
     }
 </script>
 
+<div class='tutorial'>
+{#if rules}
+<div id='rules' on:click={()=> {rules = !rules}}>
+<p id='welcome'>
+    Welcome to Elohim! 
+</p>
+    <p>The flag on the left is your avatar. Click on the symbol to change it. 
+    Once you've added players, click on the symbols 
+    below to move them to teams, randomize, or balance by ELO. <br>--Hide--</p>
+
+</div>
+{:else}
+<p on:click={()=> {rules = !rules}}>How to Use <br> -- Show -- </p>
+{/if}
+</div>
+
 <div class="create-player">
     <div class="player-container">
+        
         <div class='avatar-container'>
 
             <div class='img-box' on:click={generateAvatar}>
@@ -61,7 +78,7 @@
                 type="number" bind:value={elo}/>
             </div>    
             <div class='save-player'> 
-                <button disabled={!valid} on:click={savePlayer}>save player</button>
+                <input id = "save" type="image" src="Save.png" alt='randomize' disabled = {!valid} on:click={savePlayer}/>
             </div>
         </div>
     </div>
@@ -69,33 +86,49 @@
 </div>
 
 <style>
+    .tutorial{
+        display:flex;
+        width: 100%;
+        justify-content: center;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    p{
+        padding-left: 40px;
+        padding-right: 40px;
+        color: white;
+        font-family: cursive;
+        font-size: 1.5rem;
+    }
+
+    #rules{
+        text-justify: inter-word;
+        padding-bottom: 30px;
+    }
+
     .create-player {
         display: flex;
         height: 140px;
         justify-content: center;
     }
 
-    .player-container{
-        display: flex;
-        justify-content: flex-start;
-        height: 100px;
-        width: 360px;
-        border: solid;
-    }
-
     .avatar-container{
         display: flex;
+        width: 420px;
         height: 100px;
         min-width: 100px;
+        justify-content: space-between;
     }
 
     .name-elo{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        border-left: solid white;
+        border-right: solid white;
         height: 100px; 
         width: 160px;
-        border: solid peachpuff;
     }
 
     #input-field{
@@ -105,9 +138,14 @@
 
     .save-player{
         display: flex;
+        padding-right: 25px;
         align-items: center;
-        border: solid black;
         height: 100px;
+    }
+
+    #save{
+        height: 70px;
+        border: none;
     }
 
     .img-box{
@@ -115,7 +153,6 @@
         justify-content: center;
         width: 100px;
         height: 100px;
-        border: solid darkseagreen;
     }
 
     .elo-error{

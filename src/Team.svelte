@@ -34,13 +34,13 @@
 
 <style>
     .team-heading{
-        font-size: 1.5rem;
+        font-size: 2rem;
         padding-bottom: 0.5em;
     }
 
     .elo{
         min-height: 60px;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         overflow: hidden;
         text-decoration: underline;
     }

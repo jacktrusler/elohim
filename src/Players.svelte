@@ -22,7 +22,8 @@
         flex-direction: row;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        border: solid;
+        border-bottom: solid white;
+        padding-bottom: 60px;
     }
 
     .player {

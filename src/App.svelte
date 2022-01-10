@@ -16,10 +16,9 @@
 	<div class='gradient'>
 		<div class='castle'>
 			<div class='title'>
-				Elohim
+				Elovate
 			</div>
 		</div>
-		
 		<CreatePlayer />
 		<Players />
 		<Teams />
@@ -31,25 +30,28 @@
 <style>
 	.gradient{
 		background: linear-gradient(black 10%, rgb(40, 18, 90) 50%, black 100%);
-		height: 100vh;
+
 	}
 	.castle {
 		display: flex;
 		align-items: stretch;
-		height: 250px;
+		height: 200px;
 		width: 100%;
 		background:
 			no-repeat url('/castle-on-hill-flipped-cropped.png'),
-			linear-gradient(darkblue 50%, rgb(16, 13, 17) 100%);
+			linear-gradient(darkblue 10%, rgb(16, 13, 17) 100%);
 		background-color: #35363a;
 		background-size:cover;
+		/* background-blend-mode: difference; */
 		justify-content: center;
-		border-bottom: 25px solid black;
+		border-bottom: 15px solid black;
 		overflow: hidden;
 	}
 
 	.title{
 		display: flex;
+		justify-content: flex-start;
+		padding-right: 30px;
 		align-items: flex-end;
 		font-size: 7rem;
 		font-family: cursive; 

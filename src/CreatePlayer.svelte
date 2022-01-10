@@ -96,7 +96,6 @@
         border: solid gold;
         border-radius: 10px;
         color: gold;
-        font-family: cursive;
         font-size: 1.5rem;
     }
 

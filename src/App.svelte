@@ -24,7 +24,7 @@
 				<CreatePlayer />
 				<Players />
 				<Teams />
-				<button on:click={clear}>clear</button>
+				<input class = "clear" type="image" src="clear.png" alt='clear' on:click={clear}/>
 			</div>
 		</div>
 	</div>
@@ -69,6 +69,7 @@
 		text-align: center;
 		padding: 0.5em;
 		margin: 0 auto;
+		font-family: Georgia, 'Times New Roman', Times, serif;
 	}
 
 	.motherload {
@@ -81,6 +82,11 @@
 		width: 100%;
 	}
 
+	.clear {
+		border: none;
+		height: 50px;
+		padding-left: 10px;
+	}
 	:global(body) {
 		background-color: black; 
 		transition: background-color 0.3s;

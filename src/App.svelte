@@ -19,12 +19,15 @@
 				Elovate
 			</div>
 		</div>
-		<CreatePlayer />
-		<Players />
-		<Teams />
-		<button on:click={clear}>clear</button>
-</div>
-
+		<div class='motherload'>
+			<div class='daughterload'>
+				<CreatePlayer />
+				<Players />
+				<Teams />
+				<button on:click={clear}>clear</button>
+			</div>
+		</div>
+	</div>
 </main>
 
 <style>
@@ -60,11 +63,22 @@
 		color: white ;
 		-webkit-text-stroke: 2.5px black;
 	}
+
 	main {
 		flex-direction: column;
 		text-align: center;
 		padding: 0.5em;
 		margin: 0 auto;
+	}
+
+	.motherload {
+		display: flex;
+		justify-content: center;
+	}
+
+	.daughterload {
+		max-width: 1100px;
+		width: 100%;
 	}
 
 	:global(body) {

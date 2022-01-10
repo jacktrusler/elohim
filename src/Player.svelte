@@ -2,13 +2,14 @@
     export let name;
     export let elo;
     export let selected;
+    export let avatar;
 </script>
 
 
     <div class = 'card-grid' on:click={()=> {selected = !selected}}
         id="{selected ? 'selected' : ''}">
         <div class='img-box'>
-            <img src="minimal/saturn.png"  alt="avatar"/>
+            <img src={avatar}  alt="avatar"/>
         </div>
         <div class='text-box'>
             <div>{name}</div>

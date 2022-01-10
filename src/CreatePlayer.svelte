@@ -9,11 +9,15 @@
     let name;
     let valid;
     let elo = null;
-    let avatar = getRandomAvatar(AVATAR_COMPLEXITY);
-    let bgGradient = 'linear-gradient(to right, rgb(169, 116, 116), rgb(87, 87, 167))'
+    let avatar = "/minimal/minimalistTriangles.png"
 
     function generateAvatar() {
-        avatar = getRandomAvatar(AVATAR_COMPLEXITY);
+        let allAvatars = [];
+        allAvatars = ['/minimal/avocado.png','/minimal/bunnies.png','/minimal/cats.png','/minimal/hearts.png',
+                    '/minimal/lighthouse.png', '/minimal/minimalistTriangles.png', '/minimal/moon.png',
+                    '/minimal/mountain.png', '/minimal/saturn.png', '/minimal/streetsign.png', '/minimal/whale.png']
+
+        avatar = allAvatars[Math.floor(Math.random() * 11)]
     }
 
 
@@ -35,8 +39,8 @@
             });
             name = "";
             elo = null;
-            avatar = getRandomAvatar(AVATAR_COMPLEXITY);
-            bgGradient = generateNewGradient();
+            avatar = avatar;
+            generateAvatar();
         }
     }
 
@@ -64,7 +68,7 @@
 <div class = 'template-container'>
 <div class = 'card-grid'>
     <div class='img-box' on:click={generateAvatar}>
-        <img src="minimal/saturn.png" alt="avatar"/>
+        <img src={avatar} alt="avatar"/>
     </div>
 
     <input placeholder="Enter Name" id='input-name' type="text" bind:value={name}/>

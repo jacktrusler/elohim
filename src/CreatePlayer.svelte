@@ -64,7 +64,7 @@
 <div class = 'template-container'>
 <div class = 'card-grid'>
     <div class='img-box' on:click={generateAvatar}>
-        <img src="/minimalistTriangles.jpg" alt="avatar"/>
+        <img src="minimal/saturn.png" alt="avatar"/>
     </div>
 
     <input placeholder="Enter Name" id='input-name' type="text" bind:value={name}/>

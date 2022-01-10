@@ -1,7 +1,6 @@
 <script>
     export let name;
     export let elo;
-    export let avatar;
     export let selected;
 </script>
 
@@ -9,7 +8,7 @@
     <div class = 'card-grid' on:click={()=> {selected = !selected}}
         id="{selected ? 'selected' : ''}">
         <div class='img-box'>
-            <img src="/minimalistTriangles.jpg"  alt="avatar"/>
+            <img src="minimal/saturn.png"  alt="avatar"/>
         </div>
         <div class='text-box'>
             <div>{name}</div>
@@ -29,7 +28,7 @@
     .card-grid {
         display: grid;
         margin: 5px auto;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 10px 1fr 1fr 1fr 1fr 10px;
         grid-template-columns: 20px 1fr 1fr 20px;
         width: 100px;
         height: 100px;
@@ -53,14 +52,18 @@
     }
 
     .text-box{
+        background-color: black;
+        border-radius: 10px;
         color: white;
-        grid-row: 1;
+        grid-row: 2;
         grid-column: 2/4;
         overflow: hidden;
     }
     .elo-box{
+        background-color: black;
+        border-radius: 10px;
         color: white;
-        grid-row: 4;
+        grid-row: 5;
         grid-column: 2/4;
         overflow: hidden;
     }

@@ -19,7 +19,7 @@
         {teamName}
     </div>
     <div class='elo'>
-        {totalElo ? `ELO: ${totalElo}` : "ELO: 0"}
+        {totalElo ? `${totalElo}` : "0"}
     </div>
 </div>
     
@@ -33,45 +33,52 @@
 </div>
 
 <style>
-    .team-heading{
+    .team-heading {
         display: flex;
         justify-content: center;
-        font-size: 2rem;
-        width: 50%
+        font-size: 1.5em;
+        padding-right: 5%;
+        font-weight: bold;
     }
 
-    .player-container{
+    .player-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 10%;
+        gap: 5%;
         justify-content: center;
     }
-    .player{
+
+    .player {
         width: 100px;
     }
 
-    .elo{
+    .elo {
         min-height: 60px;
-        font-size: 1.5rem;
+        font-size: 1.5em;
         overflow: hidden;
-        text-decoration: underline;
+        color: lightgray;
     }
 
     .team-name {
         max-height: 160px;
-        min-height: 160px;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
     }
 
     @media (max-width: 640px) {
         .team-heading {
-            font-size: 1.6rem;
+            font-size: 1.25em;
+            padding-bottom: 3%;
         }
 
         .elo {
-            font-size: 1.2rem;
+            font-size: 1.25em;
+        }
+
+        .team-name {
+            flex-direction: column;
+            justify-content: center;
         }
 
     }

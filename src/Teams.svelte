@@ -97,6 +97,7 @@
   <div class="team team-1">
     <Team bind:team={$team1}/>
   </div>
+  <hr class="line"/>
   <div class="team team-2">
     <Team bind:team={$team2}/>
   </div>
@@ -114,32 +115,38 @@
     height: 70px;
   }
 
+  .line {
+    border: 2px solid;
+    color: lightgray;
+    z-index: 1;
+  }
+
   .arrow{
    display:flex;
    border:none;
    height: 50px;
    margin-top: 20px;
   }
+
   .team {
-    width: 44%;
+    width: 48%;
   }
 
   .team-1 {
-    color: skyblue;
-    border: solid skyblue;
+    color: yellowgreen;
+    padding-right: 0.65%;
   }
 
   .team-2 {
-    color: pink;
+    color: tomato;
   }
 
   .teams-container{
 	display: flex;
-	border-top: 10px solid black;
-	max-width: none;
-  padding: 1em;
+    max-width: none;
+    padding: 1em;
 	align-self: flex-end;
 	justify-content: space-around;
-  border: solid white;
+    border: solid white;
   }
 </style>

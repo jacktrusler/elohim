@@ -19,11 +19,11 @@
         {teamName}
     </div>
     <div class='elo'>
-        {totalElo ? `Total: ${totalElo}` : "Total: 0"}
+        {totalElo ? `ELO: ${totalElo}` : "ELO: 0"}
     </div>
 </div>
     
-<div>
+<div class='player-container'>
     {#each team as {selected, name,elo,avatar}}
         <div class="player">
             <Player bind:selected = {selected} {name} {elo} {avatar}/>
@@ -34,8 +34,20 @@
 
 <style>
     .team-heading{
+        display: flex;
+        justify-content: center;
         font-size: 2rem;
-        padding-bottom: 0.5em;
+        width: 50%
+    }
+
+    .player-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10%;
+        justify-content: center;
+    }
+    .player{
+        width: 100px;
     }
 
     .elo{
@@ -50,15 +62,16 @@
         min-height: 160px;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     @media (max-width: 640px) {
         .team-heading {
-            font-size: 1.2rem;
+            font-size: 1.6rem;
         }
 
         .elo {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
 
     }

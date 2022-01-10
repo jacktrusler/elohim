@@ -94,7 +94,7 @@
 </div>
 
 <div class="teams-container">
-  <div class="team team-1" id="team-1">
+  <div class="team team-1">
     <Team bind:team={$team1}/>
   </div>
   <div class="team team-2">
@@ -104,7 +104,6 @@
 
 <style>
   .button-container{
-    padding-top: 1em;
     display:flex;
     justify-content: space-around;
   }
@@ -113,7 +112,6 @@
     display: flex;
     border: none;
     height: 70px;
-    margin-bottom: 15px;
   }
 
   .arrow{
@@ -123,25 +121,25 @@
    margin-top: 20px;
   }
   .team {
-    width: 45%;
+    width: 44%;
   }
 
-  #team-1 {
+  .team-1 {
     color: skyblue;
-    font-size: 1.3rem;
+    border: solid skyblue;
   }
 
   .team-2 {
     color: pink;
-    font-size: 1.3rem;
   }
 
   .teams-container{
 	display: flex;
-	border-top: solid white;
+	border-top: 10px solid black;
 	max-width: none;
   padding: 1em;
 	align-self: flex-end;
 	justify-content: space-around;
+  border: solid white;
   }
 </style>

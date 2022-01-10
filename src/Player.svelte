@@ -5,56 +5,63 @@
     export let selected;
 </script>
 
-<div class="player" on:click={()=> {selected = !selected}}
-    id="{selected ? 'selected' : ''}">
-    <div class='img-box'>
-        <img src={`data:image/svg+xml;base64,${btoa(avatar)}`}  alt="avatar"/>
+
+    <div class = 'card-grid' on:click={()=> {selected = !selected}}
+        id="{selected ? 'selected' : ''}">
+        <div class='img-box'>
+            <img src="/minimalistTriangles.jpg"  alt="avatar"/>
+        </div>
+        <div class='text-box'>
+            <div>{name}</div>
+        </div>
+        <div class='elo-box'>
+            <div>{elo}</div>
+        </div> 
     </div>
-    <div class='text-box'>
-        <div>{name}</div>
-        <div>{elo}</div>
-    </div>
-</div>
+
+    
 
 <style>
     #selected{
-        background: #808080;
+        border: solid limegreen;
     }
 
-    .player {
-        height: 80px;
-        border: solid lightgray;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        color: white;
+    .card-grid {
+        display: grid;
+        margin: 5px auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 20px 1fr 1fr 20px;
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        box-shadow: 5px 5px 30px 7px black, -5px -5px 30px 7px darkblue;
+        cursor: pointer;
+        border: solid white
     }
 
     .img-box{
-        display:flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 40%;
+        grid-row: 1/5;
+        grid-column: 1/5;
+        height: inherit;
+        border-radius: 20px;
+    }
+
+    .img-box img{
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
     }
 
     .text-box{
-        display: flex;
-        flex-wrap: wrap;
-        width: 60%;
-        justify-content: space-evenly;
+        color: white;
+        grid-row: 1;
+        grid-column: 2/4;
+        overflow: hidden;
     }
-
-    .text-box div{
-        height: 25px;
-        overflow:hidden;
-    }
-
-    .img-box img {
-        max-height: 80px;
-        max-width: 80px;
-        min-height: 55px;
-        min-width: 55px;
-        background: #212121;
+    .elo-box{
+        color: white;
+        grid-row: 4;
+        grid-column: 2/4;
+        overflow: hidden;
     }
 </style>

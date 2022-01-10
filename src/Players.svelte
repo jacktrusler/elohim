@@ -22,11 +22,11 @@
         flex-direction: row;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        border-bottom: solid white;
-        padding-bottom: 60px;
+        border-bottom: 10px solid black;
+        padding-bottom: 10px;
     }
 
     .player {
-        width: 160px;
+        width: 20%;
     }
 </style>

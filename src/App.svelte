@@ -16,7 +16,7 @@
 	<div class='gradient'>
 		<div class='castle'>
 			<div class='title'>
-				Elovate
+				Elohim
 			</div>
 		</div>
 		<CreatePlayer />
@@ -42,7 +42,7 @@
 			linear-gradient(darkblue 10%, rgb(16, 13, 17) 100%);
 		background-color: #35363a;
 		background-size:cover;
-		/* background-blend-mode: difference; */
+		background-blend-mode: difference;
 		justify-content: center;
 		border-bottom: 15px solid black;
 		overflow: hidden;
@@ -50,7 +50,7 @@
 
 	.title{
 		display: flex;
-		justify-content: flex-start;
+		justify-content: flex-end;
 		padding-right: 30px;
 		align-items: flex-end;
 		font-size: 7rem;

@@ -51,16 +51,17 @@
 <p id='welcome'>
     Welcome to Elohim! 
 </p>
-    <p>The flag on the left is your avatar. Click on the symbol to change it. 
+    <p>Enter your name and ELO into the boxes below.
     Once you've added players, click on the symbols 
-    below to move them to teams, randomize, or balance by ELO. <br>--Hide--</p>
+    to move them to teams, randomize, or balance by ELO. <br>--Hide--</p>
 
 </div>
 {:else}
-<p on:click={()=> {rules = !rules}}>How to Use<br></p>
+<p id='how-to' on:click={()=> {rules = !rules}}>How to Use<br></p>
 {/if}
 </div>
 
+<div class = 'template-container'>
 <div class = 'card-grid'>
     <div class='img-box' on:click={generateAvatar}>
         <img src="/minimalistTriangles.jpg" alt="avatar"/>
@@ -78,22 +79,66 @@
 </div>
 
 <div class='save-player'> 
-    <input id = "save" type="image" src="Save.png" alt='randomize' disabled = {!valid} on:click={savePlayer}/>
+    <input id = "save" type="image" src="arrows-right.png" alt='randomize' disabled = {!valid} on:click={savePlayer}/>
+</div>
+
 </div>
 
 <style>
 
+    .tutorial {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .tutorial p {
+        text-justify: inter-word;
+        border: solid gold;
+        border-radius: 10px;
+        color: gold;
+        font-family: cursive;
+        font-size: 1.5rem;
+    }
+
+    #how-to{
+        width: 150px;
+    }
+
+    #rules{
+        text-justify: inter-word;
+        padding-bottom: 0px;
+    }
+    
+    .template-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    
     .card-grid {
+        grid-column: 2;
         display: grid;
         margin: 30px auto;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 20px 1fr 1fr 20px;
+        grid-template-rows: 50px 50px 50px 50px;
+        grid-template-columns: 20px 80px 80px 20px;
         width: 200px;
         height: 200px;
         border-radius: 40px;
         box-shadow: 5px 5px 30px 7px black, -5px -5px 30px 7px darkblue;
         cursor: pointer;
-        border: 2px solid white;
+        border: 2px solid gold;
+    }
+    
+    .save-player{
+        grid-column: 3;
+        display: flex;
+        align-self: center;
+        height: 100px;
+    }
+    
+    #save{
+        height: 200px;
+        border: none;
     }
 
     .img-box{
@@ -129,41 +174,6 @@
         grid-column: 2/4;
         width: 160px;
         z-index: 2;
-    }
-
-    .tutorial{
-        display:flex;
-        justify-content: center;
-        text-align: justify;
-        text-justify: inter-word;
-        border: solid white;
-        border-radius: 10px;
-    }
-
-    p{
-        padding-left: 40px;
-        padding-right: 40px;
-        color: white;
-        font-family: cursive;
-        font-size: 1.5rem;
-    }
-
-    #rules{
-        text-justify: inter-word;
-        padding-bottom: 30px;
-    }
-
-
-    .save-player{
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        height: 100px;
-    }
-
-    #save{
-        height: 70px;
-        border: none;
     }
 
     .elo-error{

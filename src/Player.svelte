@@ -29,7 +29,7 @@
     .card-grid {
         display: grid;
         margin: 5px auto;
-        grid-template-rows: 10px 1fr 1fr 1fr 1fr 10px;
+        grid-template-rows: 10px 20px 20px 20px 20px 10px;
         grid-template-columns: 20px 1fr 1fr 20px;
         width: 100px;
         height: 100px;

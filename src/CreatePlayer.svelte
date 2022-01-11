@@ -1,8 +1,6 @@
 <script>
-    import { getRandomAvatar } from "@fractalsoftware/random-avatar-generator";
     import { playerList } from './stores.ts';
 
-    const AVATAR_COMPLEXITY = 6;
     let rules = false;
     let numCheck;
 
@@ -17,7 +15,7 @@
                     '/minimal/lighthouse.png', '/minimal/minimalistTriangles.png', '/minimal/moon.png',
                     '/minimal/mountain.png', '/minimal/saturn.png', '/minimal/streetsign.png', '/minimal/whale.png']
 
-        avatar = allAvatars[Math.floor(Math.random() * 11)]
+        avatar = allAvatars[Math.floor(Math.random() * allAvatars.length)]
     }
 
 

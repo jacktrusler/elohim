@@ -19,12 +19,11 @@
 <style>
     .players {
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+        justify-content: center;
+
     }
 
     .player {
-        width: 20%;
+        margin-left: -2%;
     }
 </style>

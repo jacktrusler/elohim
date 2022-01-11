@@ -8,14 +8,23 @@
     let valid;
     let elo = null;
     let avatar = "/minimal/minimalistTriangles.png"
+    let allAvatars = [];
 
     function generateAvatar() {
-        let allAvatars = [];
         allAvatars = ['/minimal/avocado.png','/minimal/bunnies.png','/minimal/cats.png','/minimal/hearts.png',
                     '/minimal/lighthouse.png', '/minimal/minimalistTriangles.png', '/minimal/moon.png',
-                    '/minimal/mountain.png', '/minimal/saturn.png', '/minimal/streetsign.png', '/minimal/whale.png']
-
-        avatar = allAvatars[Math.floor(Math.random() * allAvatars.length)]
+                    '/minimal/mountain.png', '/minimal/saturn.png', '/minimal/streetsign.png', '/minimal/whale.png',
+                    '/minimal/asstronaunt.png', '/minimal/bakery.png', '/minimal/banana.png', '/minimal/bongocat.png',
+                    '/minimal/bubbletea.png', '/minimal/butterfly.png', '/minimal/campfire.png', '/minimal/city2.png',
+                    '/minimal/desert.png', '/minimal/dessert.png', '/minimal/fox.png', '/minimal/gmoney.png',
+                    '/minimal/hedgehog.png', '/minimal/lighthouse2.png', '/minimal/lighthouse3.png', '/minimal/pineapples.png',
+                    '/minimal/pizza.png', '/minimal/river.png', '/minimal/river2.png', '/minimal/rocket.png', '/minimal/shrimp.png',
+                    '/minimal/skyline.png', '/minimal/teahouse.png', '/minimal/watermelon.png', '/minimal/waves.png',
+                    '/minimal/winterhouse.png']
+        
+        let randomAv = Math.floor(Math.random() * allAvatars.length);
+        avatar = allAvatars[randomAv];
+        console.log(randomAv, allAvatars.length)
     }
 
 
@@ -50,16 +59,15 @@
 <div class='tutorial'>
 {#if rules}
 <div id='rules' on:click={()=> {rules = !rules}}>
-<p id='welcome'>
-    Welcome to Elohim! 
-</p>
-    <p>Enter your name and ELO into the boxes below.
-    Once you've added players, click on the symbols 
-    to move them to teams, randomize, or balance by ELO. <br>--Hide--</p>
+    <span id='welcome'>Welcome to Elohim! </span>
+    <p> First enter your name and ELO. ---------------------------- <br>
+    Once you've added players, you can move them to teams by selecting the player and 
+    the team you want to move them to respectively. ---------------------------- <br> At any time you can
+    click the shuffle button to randomize, or the scales to balance by ELO.</p>
 
 </div>
 {:else}
-<p id='how-to' on:click={()=> {rules = !rules}}>How to Use<br></p>
+<p id='how-to' on:click={()=> {rules = !rules}}>?<br></p>
 {/if}
 </div>
 
@@ -91,20 +99,27 @@
         justify-content: center;
     }
     
-    .tutorial p {
-        text-justify: inter-word;
-        border: solid gold;
-        border-radius: 10px;
+    #welcome {
+        font-size: 2rem;
         color: gold;
-        font-size: 1.5rem;
     }
 
     #how-to{
-        width: 150px;
+        color: gold;
+        width: 30px;
+        font-size: 2rem;
     }
 
     #rules{
-        text-justify: inter-word;
+        position: absolute;
+        font-size: 1.2rem;
+        padding: 30px;
+        width: 400px;
+        height: 240px;
+        border-radius: 20px;
+        color: white;
+        background: black;
+        z-index: 5;
     }
     
     .template-container {
@@ -149,7 +164,7 @@
     .img-box img{
         width: 100%;
         height: 100%;
-        border-radius: 40px;
+        border-radius: 38px;
     }
 
     input{

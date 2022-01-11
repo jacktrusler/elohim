@@ -60,9 +60,9 @@
 {#if rules}
 <div id='rules' on:click={()=> {rules = !rules}}>
     <span id='welcome'>Welcome to Elohim! </span>
-    <p> First enter your name and ELO. ---------------------------- <br>
+    <p> First enter your name and ELO. ---------------------------------------------------------- <br>
     Once you've added players, you can move them to teams by selecting the player and 
-    the team you want to move them to respectively. ---------------------------- <br> At any time you can
+    the team you want to move them to respectively. ---------------------------------------------------------- <br> At any time you can
     click the shuffle button to randomize, or the scales to balance by ELO.</p>
 
 </div>
@@ -112,10 +112,10 @@
 
     #rules{
         position: absolute;
-        font-size: 1.2rem;
-        padding: 30px;
-        width: 400px;
-        height: 240px;
+        font-size: 1.1rem;
+        padding: 40px;
+        width: 470px;
+        height: 220px;
         border-radius: 20px;
         color: white;
         background: black;
@@ -191,5 +191,12 @@
 
     .elo-error{
         color: red;
+    }
+
+    @media (max-width: 640px) {
+        #rules{
+            width: 380px;
+            height: 220px;  
+        }
     }
 </style>

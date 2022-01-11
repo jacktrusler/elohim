@@ -117,7 +117,7 @@
 
   .line {
     border: 2px solid;
-    color: lightgray;
+    color: rgb(54, 54, 54);
     z-index: 1;
   }
 
@@ -147,7 +147,7 @@
     padding: 1em;
 	align-self: flex-end;
 	justify-content: space-around;
-    border: solid white;
+    border: solid rgb(54, 54, 54);
     border-radius: 10px;
   }
 </style>

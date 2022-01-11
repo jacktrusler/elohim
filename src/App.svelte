@@ -32,7 +32,7 @@
 
 <style>
 	.gradient{
-		background: linear-gradient(black 10%, rgb(40, 18, 90) 50%, black 100%);
+		background: linear-gradient(black 10%, #212121 50%, black 100%);
 
 	}
 	.castle {
@@ -47,11 +47,10 @@
 		background-size:cover;
 		background-blend-mode: difference;
 		justify-content: center;
-		border-bottom: 15px solid black;
 		overflow: hidden;
 	}
 
-	.title{
+	.title {
 		display: flex;
 		justify-content: flex-end;
 		padding-right: 30px;
@@ -65,15 +64,16 @@
 	}
 
 	main {
+		display: flex;
 		flex-direction: column;
 		text-align: center;
-		padding: 0.5em;
-		margin: 0 auto;
 		font-family: Georgia, 'Times New Roman', Times, serif;
+		width: 100%;
 	}
 
 	.motherload {
 		display: flex;
+		padding: 20px;
 		justify-content: center;
 	}
 
@@ -87,8 +87,10 @@
 		height: 50px;
 		padding-left: 10px;
 	}
+
 	:global(body) {
-		background-color: black; 
+		padding: 0;
+		background-color: black;
 		transition: background-color 0.3s;
 	}
 </style>

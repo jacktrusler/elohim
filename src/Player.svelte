@@ -34,7 +34,7 @@
         width: 100px;
         height: 100px;
         border-radius: 20px;
-        box-shadow: 5px 5px 30px 7px black, -5px -5px 30px 7px darkblue;
+        box-shadow: 0px 0px 20px 2px darkgoldenrod;
         cursor: pointer;
         border: solid white
     }

@@ -66,26 +66,24 @@
 </div>
 
 <div class = 'template-container'>
-<div class = 'card-grid'>
-    <div class='img-box' on:click={generateAvatar}>
-        <img src={avatar} alt="avatar"/>
+    <div class = 'card-grid'>
+        <div class='img-box' on:click={generateAvatar}>
+            <img src={avatar} alt="avatar"/>
+        </div>
+
+       <input placeholder="Enter Name" id='input-name' type="text" bind:value={name}/>
+
+       <input
+       placeholder="Enter Elo"
+       id='input-elo'
+       class:elo-error={/\D/.test(elo)}
+       class:elo={!/\D/.test(elo)}
+       type="number" bind:value={elo}/>
     </div>
 
-    <input placeholder="Enter Name" id='input-name' type="text" bind:value={name}/>
-
-    <input 
-    placeholder="Enter Elo"
-    id='input-elo'
-    class:elo-error={/\D/.test(elo)} 
-    class:elo={!/\D/.test(elo)}
-    type="number" bind:value={elo}/> 
-    
-</div>
-
-<div class='save-player'> 
-    <input id = "save" type="image" src="arrows-right.png" alt='randomize' disabled = {!valid} on:click={savePlayer}/>
-</div>
-
+    <div class='save-player'>
+        <input id = "save" type="image" src="arrows-right.png" alt='randomize' disabled = {!valid} on:click={savePlayer}/>
+    </div>
 </div>
 
 <style>
@@ -109,7 +107,6 @@
 
     #rules{
         text-justify: inter-word;
-        padding-bottom: 0px;
     }
     
     .template-container {
@@ -127,7 +124,7 @@
         width: 200px;
         height: 200px;
         border-radius: 40px;
-        box-shadow: 5px 5px 30px 7px black, -5px -5px 30px 7px darkblue;
+        box-shadow: 0px 0px 20px 2px darkgoldenrod;
         cursor: pointer;
         border: 2px solid gold;
     }

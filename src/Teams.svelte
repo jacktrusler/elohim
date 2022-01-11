@@ -87,26 +87,26 @@
 </script>
 
 <div class="button-container">
-  <input class = "arrow" type="image" src="Team1.png" alt='randomize' on:click={addTeamOne}/>
-  <input class = "arrow" type="image" src="Randomize.png" alt='randomize' on:click={randomize}/>
+  <input class="button" type="image" src="Randomize.png" alt='randomize' on:click={randomize}/>
   <input id='scale' type="image" src="Balance.png" alt='auto-balance' on:click={auto}/>
-  <input class = "arrow" type="image" src="Team2.png" alt='randomize' on:click={addTeamTwo}/>
 </div>
 
 <div class="teams-container">
   <div class="team team-1">
-    <Team bind:team={$team1}/>
+    <Team bind:team={$team1} on:addToTeam={addTeamOne}/>
   </div>
   <hr class="line"/>
   <div class="team team-2">
-    <Team bind:team={$team2}/>
+    <Team bind:team={$team2} on:addToTeam={addTeamTwo}/>
   </div>
 </div>
 
 <style>
   .button-container{
     display:flex;
-    justify-content: space-around;
+    justify-content: flex-end;
+    /*padding: 20px 20px 30px;*/
+    padding-bottom: 20px;
   }
 
   #scale{
@@ -121,11 +121,11 @@
     z-index: 1;
   }
 
-  .arrow{
-   display:flex;
-   border:none;
-   height: 50px;
-   margin-top: 20px;
+  .button {
+    display:flex;
+    border: none;
+    height: 50px;
+    margin-top: 20px;
   }
 
   .team {
@@ -148,5 +148,6 @@
 	align-self: flex-end;
 	justify-content: space-around;
     border: solid white;
+    border-radius: 10px;
   }
 </style>

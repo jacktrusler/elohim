@@ -84,11 +84,21 @@
     $playerList = unselectedPlayers;
   }
 
+  function deleteSelectedPlayers() {
+    $playerList = $playerList.filter(player => !player.selected);
+    team1.update(team1 => team1.filter(player => !player.selected));
+    team2.update(team2 => team2.filter(player => !player.selected));
+  }
+
 </script>
 
-<div class="button-container">
-  <input class="button" type="image" src="Randomize.png" alt='randomize' on:click={randomize}/>
-  <input id='scale' type="image" src="Balance.png" alt='auto-balance' on:click={auto}/>
+<div class="button-container-container">
+  <input class="delete" type="image" src="clear.png" alt="delete" on:click={deleteSelectedPlayers}/>
+
+  <div class="button-container">
+    <input class="randomize" type="image" src="Randomize.png" alt='randomize' on:click={randomize}/>
+    <input class="scale" type="image" src="Balance.png" alt='auto-balance' on:click={auto}/>
+  </div>
 </div>
 
 <div class="teams-container">
@@ -102,17 +112,37 @@
 </div>
 
 <style>
+
+  .button-container-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .button-container{
     display:flex;
     justify-content: flex-end;
-    /*padding: 20px 20px 30px;*/
     padding-bottom: 20px;
   }
 
-  #scale{
+  .scale{
     display: flex;
     border: none;
     height: 70px;
+  }
+
+  .randomize {
+    display:flex;
+    border: none;
+    height: 50px;
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+
+  .delete {
+    border: none;
+    height: 50px;
+    margin-top: 15px;
+    padding-left: 10px;
   }
 
   .line {
@@ -121,12 +151,6 @@
     z-index: 1;
   }
 
-  .button {
-    display:flex;
-    border: none;
-    height: 50px;
-    margin-top: 20px;
-  }
 
   .team {
     width: 48%;
@@ -140,6 +164,7 @@
   .team-2 {
     color: tomato;
   }
+
 
   .teams-container{
 	display: flex;

@@ -10,6 +10,7 @@
 		team1.update(() => [] );
 		team2.update(() => [] );
 	}
+
 </script>
 
 <main>
@@ -24,7 +25,6 @@
 				<CreatePlayer />
 				<Players />
 				<Teams />
-				<input class = "clear" type="image" src="clear.png" alt='clear' on:click={clear}/>
 			</div>
 		</div>
 	</div>
@@ -82,11 +82,6 @@
 		width: 100%;
 	}
 
-	.clear {
-		border: none;
-		height: 50px;
-		padding-left: 10px;
-	}
 
 	:global(body) {
 		padding: 0;

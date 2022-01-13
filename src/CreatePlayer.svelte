@@ -20,7 +20,11 @@
                     '/minimal/hedgehog.png', '/minimal/lighthouse2.png', '/minimal/lighthouse3.png', '/minimal/pineapples.png',
                     '/minimal/pizza.png', '/minimal/river.png', '/minimal/river2.png', '/minimal/rocket.png', '/minimal/shrimp.png',
                     '/minimal/skyline.png', '/minimal/teahouse.png', '/minimal/watermelon.png', '/minimal/waves.png',
-                    '/minimal/winterhouse.png']
+                    '/minimal/winterhouse.png', '/minimal/books.png','/minimal/bus.png','/minimal/chairChad.png',
+                    '/minimal/chemistry.png', '/minimal/earth.png', '/minimal/ferris.png', '/minimal/map.png', '/minimal/runChad.png',
+                    '/minimal/controller.png', '/minimal/factory.png', '/minimal/phonebeard.png', '/minimal/poolhouse.png',
+                    '/minimal/stadium.png'
+                ]
         
         let randomAv = Math.floor(Math.random() * allAvatars.length);
         avatar = allAvatars[randomAv];
@@ -60,7 +64,7 @@
 {#if rules}
 <div id='rules' on:click={()=> {rules = !rules}}>
     <span id='welcome'>Welcome to Elohim! </span>
-    <p> First enter your name and ELO. ---------------------------------------------------------- <br>
+    <p> First enter your name and ELO. -------------------------------------------------- <br>
     Once you've added players, you can move them to teams by selecting the player and 
     the team you want to move them to respectively. ---------------------------------------------------------- <br> At any time you can
     click the shuffle button to randomize, or the scales to balance by ELO.</p>
@@ -197,6 +201,11 @@
         #rules{
             width: 380px;
             height: 220px;  
+        }
+        .img-box img{
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
         }
     }
 </style>

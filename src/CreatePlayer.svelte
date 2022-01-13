@@ -31,6 +31,12 @@
         console.log(randomAv, allAvatars.length)
     }
 
+    function submit(event) {
+        if (event.key === 'Enter') {
+            savePlayer();
+        }
+    }
+
 
     function savePlayer() {
         numCheck = /\D/.test(elo) //if not numbers return true
@@ -84,11 +90,13 @@
        <input placeholder="Enter Name" id='input-name' type="text" bind:value={name}/>
 
        <input
-       placeholder="Enter Elo"
-       id='input-elo'
-       class:elo-error={/\D/.test(elo)}
-       class:elo={!/\D/.test(elo)}
-       type="number" bind:value={elo}/>
+            placeholder="Enter Elo"
+            id='input-elo'
+            class:elo-error={/\D/.test(elo)}
+            class:elo={!/\D/.test(elo)}
+            type="number" bind:value={elo}
+            on:keydown={submit}>
+       />
     </div>
 
     <div class='save-player'>

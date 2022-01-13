@@ -4,6 +4,7 @@
 	import Players from './Players.svelte';
 	import CreatePlayer from "./CreatePlayer.svelte";
 	import Teams from './Teams.svelte'
+	import HowTo from "./HowTo.svelte";
 
 	function clear() {
 		$playerList = [];
@@ -22,6 +23,7 @@
 		</div>
 		<div class='motherload'>
 			<div class='daughterload'>
+				<HowTo />
 				<CreatePlayer />
 				<Players />
 				<Teams />

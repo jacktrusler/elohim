@@ -64,9 +64,9 @@
 {#if rules}
 <div id='rules' on:click={()=> {rules = !rules}}>
     <span id='welcome'>Welcome to Elohim! </span>
-    <p> First enter your name and ELO. -------------------------------------------------- <br>
+    <p> First enter your name and ELO. <br> ---------------------------------- <br>
     Once you've added players, you can move them to teams by selecting the player and 
-    the team you want to move them to respectively. ---------------------------------------------------------- <br> At any time you can
+    the team you want to move them to respectively. <br> ---------------------------------- <br> At any time you can
     click the shuffle button to randomize, or the scales to balance by ELO.</p>
 
 </div>
@@ -140,10 +140,10 @@
         grid-template-columns: 20px 80px 80px 20px;
         width: 200px;
         height: 200px;
-        border-radius: 40px;
+        border-radius: 44px;
         box-shadow: 0px 0px 20px 2px darkgoldenrod;
         cursor: pointer;
-        border: 2px solid gold;
+        border: 6px solid gold;
     }
     
     .save-player{
@@ -168,7 +168,7 @@
     .img-box img{
         width: 100%;
         height: 100%;
-        border-radius: 38px;
+        border-radius: 35px;
     }
 
     input{
@@ -201,11 +201,6 @@
         #rules{
             width: 380px;
             height: 220px;  
-        }
-        .img-box img{
-        width: 100%;
-        height: 100%;
-        border-radius: 40px;
         }
     }
 </style>

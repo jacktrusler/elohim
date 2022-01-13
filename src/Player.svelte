@@ -23,7 +23,7 @@
 
 <style>
     #selected{
-        border: solid limegreen;
+        border: 4px solid limegreen;
     }
 
     .card-grid {
@@ -36,14 +36,14 @@
         border-radius: 20px;
         box-shadow: 0px 0px 20px 2px darkgoldenrod;
         cursor: pointer;
-        border: solid white
+        border: 4px solid white
     }
 
     .img-box{
         grid-row: 1/5;
         grid-column: 1/5;
         height: inherit;
-        border-radius: 20px;
+        border-radius: 25px;
     }
 
     .img-box img{

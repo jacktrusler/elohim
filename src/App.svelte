@@ -1,16 +1,8 @@
 <script lang="ts">
-	import { team1, team2, playerList } from "./stores";
-
 	import Players from './Players.svelte';
 	import CreatePlayer from "./CreatePlayer.svelte";
 	import Teams from './Teams.svelte'
-
-	function clear() {
-		$playerList = [];
-		team1.update(() => [] );
-		team2.update(() => [] );
-	}
-
+	import HowTo from "./HowTo.svelte";
 </script>
 
 <main>
@@ -22,6 +14,7 @@
 		</div>
 		<div class='motherload'>
 			<div class='daughterload'>
+				<HowTo />
 				<CreatePlayer />
 				<Players />
 				<Teams />

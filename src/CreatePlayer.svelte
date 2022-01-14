@@ -1,7 +1,6 @@
 <script>
     import { playerList } from './stores.ts';
 
-    let rules = false;
     let numCheck;
 
     let name;
@@ -66,21 +65,6 @@
     }
 </script>
 
-<div class='tutorial'>
-{#if rules}
-<div id='rules' on:click={()=> {rules = !rules}}>
-    <span id='welcome'>Welcome to Elohim! </span>
-    <p> First enter your name and ELO. <br> ---------------------------------- <br>
-    Once you've added players, you can move them to teams by selecting the player and 
-    the team you want to move them to respectively. <br> ---------------------------------- <br> At any time you can
-    click the shuffle button to randomize, or the scales to balance by ELO.</p>
-
-</div>
-{:else}
-<p id='how-to' on:click={()=> {rules = !rules}}>?<br></p>
-{/if}
-</div>
-
 <div class = 'template-container'>
     <div class = 'card-grid'>
         <div class='img-box' on:click={generateAvatar}>
@@ -105,35 +89,6 @@
 </div>
 
 <style>
-
-    .tutorial {
-        display: flex;
-        justify-content: center;
-    }
-    
-    #welcome {
-        font-size: 2rem;
-        color: gold;
-    }
-
-    #how-to{
-        color: gold;
-        width: 30px;
-        font-size: 2rem;
-    }
-
-    #rules{
-        position: absolute;
-        font-size: 1.1rem;
-        padding: 40px;
-        width: 470px;
-        height: 220px;
-        border-radius: 20px;
-        color: white;
-        background: black;
-        z-index: 5;
-    }
-    
     .template-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -205,10 +160,4 @@
         color: red;
     }
 
-    @media (max-width: 640px) {
-        #rules{
-            width: 380px;
-            height: 220px;  
-        }
-    }
 </style>

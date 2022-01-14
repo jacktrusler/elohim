@@ -1,17 +1,8 @@
 <script lang="ts">
-	import { team1, team2, playerList } from "./stores";
-
 	import Players from './Players.svelte';
 	import CreatePlayer from "./CreatePlayer.svelte";
 	import Teams from './Teams.svelte'
 	import HowTo from "./HowTo.svelte";
-
-	function clear() {
-		$playerList = [];
-		team1.update(() => [] );
-		team2.update(() => [] );
-	}
-
 </script>
 
 <main>

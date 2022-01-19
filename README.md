@@ -7,4 +7,5 @@
 <div align='center'> <h4> The code for balancing the teams can be found in elohim.js, it's pretty simple, find the mean and then find every permutation of every team and whichever team when added up is closest to the mean will be one team. </h4> </div>
 
 <div align='center'> <h2> Preview </h2> </div> 
+
 [![ELOHIMscreenshot.png](https://i.postimg.cc/hPLXby4X/ELOHIMscreenshot.png)](https://postimg.cc/ZCqYJLdm)
